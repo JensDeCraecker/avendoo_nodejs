@@ -1,0 +1,21 @@
+{
+  "name": "melding",
+  "plural": "meldingen",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "probleem": {
+      "type": "string"
+    },
+    "defect": {
+      "type": "boolean"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

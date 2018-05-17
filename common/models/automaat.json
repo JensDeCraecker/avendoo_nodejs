@@ -1,0 +1,61 @@
+{
+  "name": "automaat",
+  "plural": "automaten",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "adres": {
+      "type": "string"
+    },
+    "omschrijving": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "default": "ok"
+    },
+    "coordinaten": {
+      "type": "string"
+    },
+    "laatsteLevering": {
+      "type": "date"
+    },
+    "volgendeLevering": {
+      "type": "date"
+    },
+    "created_at": {
+      "type": "date"
+    },
+    "updated_at": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "rijen": {
+      "type": "hasMany",
+      "model": "rij",
+      "foreignKey": "automaat_id"
+    },
+    "items": {
+      "type": "hasMany",
+      "model": "item",
+      "foreignKey": "automaat_id"
+    },
+    "aanbiedingen": {
+      "type": "hasMany",
+      "model": "aanbieding",
+      "foreignKey": "automaat_id"
+    },
+    "meldingen": {
+      "type": "hasMany",
+      "model": "melding",
+      "foreignKey": "automaat_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

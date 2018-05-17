@@ -1,0 +1,33 @@
+{
+  "name": "rij",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "status": {
+      "type": "string",
+      "default": "ok"
+    },
+    "plaatsInAutomaat": {
+      "type": "number"
+    },
+    "maxAantalItems": {
+      "type": "number"
+    },
+    "maxGroottePerItem": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "items": {
+      "type": "hasMany",
+      "model": "item",
+      "foreignKey": "rij_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

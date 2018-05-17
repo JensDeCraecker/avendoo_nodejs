@@ -1,0 +1,27 @@
+{
+  "name": "item",
+  "plural": "items",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "prijs": {
+      "type": "string"
+    },
+    "soort": {
+      "type": "string"
+    },
+    "vervaldatum": {
+      "type": "date"
+    },
+    "created_at": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
