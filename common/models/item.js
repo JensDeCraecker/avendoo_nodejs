@@ -1,5 +1,5 @@
 'use strict';
 
-module.exports = function(Item) {
+module.exports = (Item) => {
 
 };
