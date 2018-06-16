@@ -51,15 +51,12 @@ const subSimuleerGebruiker = async () => {
   inquirer
     .prompt(mnuSimuleerGebruiker)
     .then(answers => {
-      console.log(answers.simulatie)
       if (answers.simulatie === 'Ochtend 😴')
-        console.log('06:00 Onderweg');
-      return simOchtendShift()
+        return simOchtendShift()
       if (answers.simulatie === 'Middag 🤤')
-        console.log('12:15 Onderweg');
-      // return simMiddagShift()
+        return simMiddagShift()
       if (answers.simulatie === '⬅️ Terug')
-        console.log('Terug gaan')
+        return true
     })
 }
 
@@ -90,7 +87,7 @@ const reseedItems = async () => {
 }
 
 const simOchtendShift = async () => {
-  console.log('Simulatie van de ochtend 😴 test');
+  console.log('Simulatie van de ochtend 😴');
   console.log('Overal worden er broden weg gehaald 🍞')
   for (let i = 0; i < 32; i++) {
     const randomNumber = Math.floor(Math.random() * 425 + 1);
@@ -98,11 +95,11 @@ const simOchtendShift = async () => {
   }
 }
 
-// const simMiddagShift = async () => {
-//   console.log('Simulatie van de middag 🤤');
-//   console.log('Overal worden er broden weg gehaald 🍞 omdat de mensen honger hebben');
-//   for (let i = 0; i < 5000550; i++) {
-//     const randomNumber = Math.floor(Math.random() * 425 + 1);
-//     await axios.delete(`http://localhost:3001/api/items/${randomNumber}`)
-//   }
-// }
+const simMiddagShift = async () => {
+  console.log('Simulatie van de middag 🤤');
+  console.log('Overal worden er broden weg gehaald 🍞 omdat de mensen honger hebben');
+  for (let i = 0; i < 250; i++) {
+    const randomNumber = Math.floor(Math.random() * 425 + 1);
+    await axios.delete(`http://localhost:3001/api/items/${randomNumber}`)
+  }
+}
